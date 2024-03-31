@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: kumar08401/githubactions:1
+          tags: kumar08401/githubactions:2
       
   #build:
     #needs: checkout
