@@ -6,8 +6,16 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs: 
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: main
   docker:
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
       #- name: Checkout
