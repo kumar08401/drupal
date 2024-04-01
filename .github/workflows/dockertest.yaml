@@ -8,20 +8,15 @@ on:
 
 jobs:
   checkout:
-    runs-on: ubuntu-latest
+    runs-on: master-VirtualBox
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      with:
-        path: main
-  build:
-    runs-on: master-VirtualBox
-    steps:
-    - name: checkout2
-      uses: actions/checkout@v4
-      run: echo Hello, world!
-    - name: know PWD
+      #with:
+        #path: main
       run: pwd
+      
+
 
   #docker:
     #needs: checkout
