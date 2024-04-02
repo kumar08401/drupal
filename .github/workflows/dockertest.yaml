@@ -18,7 +18,11 @@ jobs:
       run: echo "Hello World!"
     - name: Print goodbye
       run: echo "Done - bye!"
-
+  dockerlogin:
+    runs-on: self-hosted
+    steps:
+    - name: docker login
+      run: docker login -u kumar08401 -p $Zaq1Xsw2
 
   #docker:
     #needs: checkout
