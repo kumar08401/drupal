@@ -18,13 +18,16 @@ jobs:
       run: echo "Hello World!"
     - name: Print goodbye
       run: echo "Done - bye!"
-  dockerlogin:
-    runs-on: self-hosted
+  
+  login:
+    runs-on: ubuntu-latest
     steps:
-    - name: docker login
-      run: docker login -u kumar08401 -p $Zaq1Xsw2
-
-  #docker:
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: kumar08401
+        password: $Zaq1Xsw2
+        #docker:
     #needs: checkout
     #runs-on: ubuntu-latest
     #steps:
