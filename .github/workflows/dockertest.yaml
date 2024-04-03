@@ -48,8 +48,8 @@ jobs:
         run: cd /home/master/applications/actions-runner/_work/drupal/drupal/main/helm
       - name: pwd
         run: pwd
-      #- name: run helm chart
-      #- run : helm install drupal drupal -f drupal/values.yaml 
+      - name: run helm chart
+      - run : helm install drupal drupal -f /home/master/applications/actions-runner/_work/druapl/drupal/main/helm/drupal/values.yaml 
 
       
   #build:
