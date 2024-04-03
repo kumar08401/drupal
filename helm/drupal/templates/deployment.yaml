@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: drupal
+  namespace: drupal
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
