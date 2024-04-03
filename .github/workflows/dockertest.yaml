@@ -49,7 +49,10 @@ jobs:
       - name: pwd
         run: pwd
       - name: run helm chart
-      - run : helm install drupal drupal -f /home/master/applications/actions-runner/_work/druapl/drupal/main/helm/drupal/values.yaml 
+        with:
+          context: .
+        run: ls
+      #- run : helm install drupal drupal -f /home/master/applications/actions-runner/_work/druapl/drupal/main/helm/drupal/values.yaml 
 
       
   #build:
