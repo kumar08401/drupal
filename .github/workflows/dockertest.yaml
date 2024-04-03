@@ -38,6 +38,12 @@ jobs:
           context: .
           push: true
           tags: kumar08401/githubactions:latest
+  run-cmd:
+    needs: docker-login
+    runs-on: self-hosted
+    steps:
+      - name: run command
+        run: pwd
 
       
   #build:
