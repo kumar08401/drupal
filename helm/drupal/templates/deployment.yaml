@@ -1,0 +1,27 @@
+# drupal-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drupal
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: drupal
+  template:
+    metadata:
+      labels:
+        app: drupal
+    spec:
+      containers:
+      - name: drupal
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: drupal-persistent-storage
+          mountPath: /var/www/html/sites/default/files
+      volumes:
+      - name: drupal-persistent-storage
+        persistentVolumeClaim:
+          claimName: wp-pv-claim1

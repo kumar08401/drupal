@@ -1,0 +1,13 @@
+# drupal-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: drupal
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: drupal
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
