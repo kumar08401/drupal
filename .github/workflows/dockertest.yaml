@@ -32,7 +32,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: kumar08401/githubactions:1
+          tags: kumar08401/githubactions:2
 
       
   #build:
