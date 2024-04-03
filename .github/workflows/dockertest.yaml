@@ -49,7 +49,7 @@ jobs:
       - name: pwd
         run: pwd
       - name: run helm chart
-        run : helm install drupal drupal -f helm/drupal/values.yaml 
+        run : helm install drupal helm/drupal -f helm/drupal/values.yaml 
 
       
   #build:
