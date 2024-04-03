@@ -15,6 +15,7 @@ jobs:
       with:
         path: main
   docker-login:
+    needs: checkout
     runs-on: self-hosted
     steps:
       - name: Login to Docker Hub
@@ -22,7 +23,8 @@ jobs:
         with:
           username: kumar08401
           password: $Zaq1Xsw2
-  docker-buil:
+  docker-build:
+    needs: docker-login
     runs-on: self-hosted
     steps:
       - name: Login to Docker Hub
