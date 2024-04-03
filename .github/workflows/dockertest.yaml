@@ -14,8 +14,12 @@ jobs:
       uses: actions/checkout@v4
       with:
         path: main
-    - name: Print goodbye
-      run: docker build -t kumar08401/test:v1
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: main
+      run: docker build .  
+
       
   #build:
     #needs: checkout
