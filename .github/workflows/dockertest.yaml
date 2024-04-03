@@ -1,4 +1,4 @@
-name: Git to K8 deploy
+name: Docker Image CI
 
 on:
   push:
@@ -15,7 +15,6 @@ jobs:
       with:
         path: main
   docker-login:
-    needs: checkout
     runs-on: self-hosted
     steps:
       - name: Login to Docker Hub
@@ -23,8 +22,7 @@ jobs:
         with:
           username: kumar08401
           password: $Zaq1Xsw2
-  docker-build:
-    needs: docker-login
+  docker-buil:
     runs-on: self-hosted
     steps:
       - name: Build and push
@@ -32,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: kumar08401/githubactions:2
+          tags: kumar08401/githubactions:latest
 
       
   #build:
