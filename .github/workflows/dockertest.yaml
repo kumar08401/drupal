@@ -39,7 +39,7 @@ jobs:
           push: true
           tags: kumar08401/githubactions:latest
   run-cmd:
-    needs: docker-login
+    needs: docker-build
     runs-on: self-hosted
     steps:
       - name: run command
