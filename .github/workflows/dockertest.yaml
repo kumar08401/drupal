@@ -44,8 +44,8 @@ jobs:
     steps:
       #- name: run command
         #run: pwd
-      - name: navigate to path
-        run: cd /home/master/applications/actions-runner/_work/drupal/drupal/main/helm
+      #- name: navigate to path
+        #run: cd /home/master/applications/actions-runner/_work/drupal/drupal/main/helm
       - name: pwd
         run: pwd
       - name: run helm chart
