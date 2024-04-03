@@ -42,8 +42,8 @@ jobs:
     needs: docker-build
     runs-on: self-hosted
     steps:
-      - name: run command
-        run: pwd
+      #- name: run command
+        #run: pwd
       - name: navigate to path
         run: cd /home/master/applications/actions-runner/_work/drupal/drupal/main/helm
       #- name: run helm chart
