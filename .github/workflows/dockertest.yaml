@@ -1,12 +1,12 @@
 name: Docker Image CI
 
 env:
-  REGISTRY_NAME: ghcr.io/${{ github.repository_owner }}
+  REGISTRY_NAME: ghcr.io/${{ github.repository_owner_id }}
   REGISTRY_USERNAME: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
   #IMAGE_TAG1: ${{ github.sha }}
   IMAGE_TAG2: ${{ github.username}}
-  #IMAGE_TAG3: ${{ username }}
+  IMAGE_TAG3: ${{ username }}
 
 on:
   push:
