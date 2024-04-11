@@ -4,7 +4,8 @@ env:
   REGISTRY_NAME: ghcr.io/${{ github.repository_owner }}
   REGISTRY_USERNAME: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-  IMAGE_TAG: ${{ github.sha }}
+  IMAGE_TAG1: ${{ github.sha }}
+  IMAGE_TAG: ${{ GITHUB_SHA }}
 
 on:
   push:
