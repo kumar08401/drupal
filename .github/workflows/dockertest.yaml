@@ -20,6 +20,8 @@ jobs:
       uses: actions/checkout@v4
       with:
         path: main
+    - name: Printenv
+      run: printenv
   docker-login:
     needs: checkout
     runs-on: self-hosted
