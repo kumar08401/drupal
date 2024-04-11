@@ -37,7 +37,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: kumar08401/githubactions:latest
+          tags: kumar08401/githubactions:$(date +%s)
   run-cmd:
     needs: docker-build
     runs-on: self-hosted
