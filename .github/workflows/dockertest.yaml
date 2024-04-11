@@ -5,7 +5,7 @@ env:
   REGISTRY_USERNAME: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
   IMAGE_TAG1: ${{ github.sha }}
-  IMAGE_TAG: ${{ GITHUB.event}}
+  IMAGE_TAG: ${{ GITHUB.REPOSITORY.ID}}
 
 on:
   push:
