@@ -28,13 +28,12 @@ jobs:
     needs: checkout
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v3
-      with:
-        path: main 
+    #- uses: actions/checkout@v3
+      #with:
+        #path: main 
         #path: main
         # Disabling shallow clone is recommended for improving relevancy of reporting.
         #fetch-depth: 0
-
     # Triggering SonarQube analysis as results of it are required by Quality Gate check.
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
