@@ -28,7 +28,7 @@ jobs:
     needs: checkout
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         #path: main 
         #path: main
@@ -40,8 +40,7 @@ jobs:
       env:
         SONAR_TOKEN: sqa_a4f62899c9d89337a6063e43f3ef6634e49be6f2
         SONAR_HOST_URL: http://192.168.174.201:9000
-      with:
-        projectBaseDir: Dockerfile
+      
 
     # Check the Quality Gate status.
     - name: SonarQube Quality Gate check
