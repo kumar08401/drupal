@@ -4,7 +4,7 @@ env:
   REGISTRY_NAME: ghcr.io/${{ github.repository_owner_id }}
   REGISTRY_USERNAME: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-  ##IMAGE_TAG1: ${{ github.sha }}
+  #IMAGE_TAG1: ${{ github.sha }}
   #IMAGE_TAG2: ${{ github.username}}
   IMAGE_TAG: ${{ github.run_number }}
 
@@ -21,11 +21,22 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        path: master
+        path: main
     - name: Printenv
       run: printenv
+  sonarqube:
+    #needs: checkout
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        #path: main 
+        #path: main
+        # Disabling shallow clone is recommended for improving relevancy of reporting.
+        fetch-depth: 0
+    # Triggering SonarQube analysis as results of it are required by Quality Gate check.
   docker-login:
-    needs: checkout
+    needs: sonarqube
     runs-on: self-hosted
     steps:
       - name: Login to Docker Hub
