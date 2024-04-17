@@ -43,7 +43,7 @@ jobs:
         #sonar_projectKey: drupal
       with:
         args: >
-          -Dsonar.sonar.projectkey= drupal.test
+          -Dsonar.sonar.projectkey= drupaltest
 
     # Check the Quality Gate status.
     #- name: SonarQube Quality Gate check
