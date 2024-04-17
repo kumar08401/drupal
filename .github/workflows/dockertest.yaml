@@ -39,7 +39,7 @@ jobs:
       uses: sonarsource/sonarqube-scan-action@master
       env:
         SONAR_TOKEN: sqa_a4f62899c9d89337a6063e43f3ef6634e49be6f2
-        SONAR_HOST_URL: http://192.168.174.201:9000
+        SONAR_HOST_URL: http://10.0.2.15:31211
         sonar_projectKey: drupal      
 
     # Check the Quality Gate status.
