@@ -39,7 +39,7 @@ jobs:
       uses: sonarsource/sonarqube-scan-action@master
       env:
         SONAR_TOKEN: sqa_a4f62899c9d89337a6063e43f3ef6634e49be6f2
-        SONAR_HOST_URL: ${{sonar_host}}
+        SONAR_HOST_URL: ${{var.sonar_host}}
         #sonar_projectKey: drupal
       with:
         projectBaseDir: ./
