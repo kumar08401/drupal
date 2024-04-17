@@ -24,18 +24,8 @@ jobs:
         path: main
     - name: Printenv
       run: printenv
-  sonarqube:
-    #needs: checkout
-    runs-on: self-hosted
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        #path: main
-        # Disabling shallow clone is recommended for improving relevancy of reporting.
-        fetch-depth: 0
-    # Triggering SonarQube analysis as results of it are required by Quality Gate check.
   docker-login:
-    needs: sonarqube
+    needs: checkout
     runs-on: self-hosted
     steps:
       - name: Login to Docker Hub
