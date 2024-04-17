@@ -38,7 +38,7 @@ jobs:
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
-        SONAR_TOKEN: sqa_a4f62899c9d89337a6063e43f3ef6634e49be6f2
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN}}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST }}
         #sonar_projectKey: drupal
       with:
@@ -47,14 +47,14 @@ jobs:
           -Dsonar.projectKey=drupal
 
     # #Check the Quality Gate status.
-    #- name: SonarQube Quality Gate check
-      #id: sonarqube-quality-gate-check
-      #uses: sonarsource/sonarqube-quality-gate-action@master
+    - name: SonarQube Quality Gate check
+      id: sonarqube-quality-gate-check
+      uses: sonarsource/sonarqube-quality-gate-action@master
       # Force to fail step after specific time.
-      #timeout-minutes: 5
-      #env:
-       #SONAR_TOKEN: sqa_a4f62899c9d89337a6063e43f3ef6634e49be6f2
-       #SONAR_HOST_URL: http://192.168.174.201:9000 #OPTIONAL
+      timeout-minutes: 5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN}}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST }}
   docker-login:
     needs: sonarqube
     runs-on: self-hosted
@@ -72,7 +72,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: kumar08401
-          password: $Zaq1Xsw2
+          password: ${{ secrets.DOCKER_PASS }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
