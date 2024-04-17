@@ -40,7 +40,10 @@ jobs:
       env:
         SONAR_TOKEN: sqa_a4f62899c9d89337a6063e43f3ef6634e49be6f2
         SONAR_HOST_URL: http://10.0.2.15:31211
-        sonar_projectKey: drupal      
+        #sonar_projectKey: drupal
+      with:
+        args: >
+          -Dsonar.sonar.projectkey= drupal 
 
     # Check the Quality Gate status.
     #- name: SonarQube Quality Gate check
