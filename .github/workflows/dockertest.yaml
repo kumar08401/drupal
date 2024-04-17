@@ -45,7 +45,7 @@ jobs:
         args: >
           -Dsonar.sonar.projectkey= drupaltest
 
-    # Check the Quality Gate status.
+    # #Check the Quality Gate status.
     #- name: SonarQube Quality Gate check
       #id: sonarqube-quality-gate-check
       #uses: sonarsource/sonarqube-quality-gate-action@master
